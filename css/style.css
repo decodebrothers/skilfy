@@ -1,3 +1,19 @@
+@media screen and (min-width: 1400px) {
+  .container {
+    max-width: 1380px;
+  }
+}
+@media screen and (min-width: 1500px) {
+  .container {
+    max-width: 1460px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
 .btn.btn-primary {
   border: 1px solid #838383;
   color: #D6D1C7;
@@ -52,7 +68,7 @@ body {
   background: #010101;
   font-size: 14px;
   font-family: "Hanken Grotesk", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   color: #D6D1C7;
 }
 
@@ -120,10 +136,6 @@ p {
 
 .p-15 {
   padding: 0 15px;
-}
-
-.body {
-  padding-top: 80px;
 }
 
 .header {
@@ -203,11 +215,19 @@ p {
 }
 
 .heading-block {
-  margin-top: -305px;
+  margin-top: -285px;
   position: relative;
   z-index: 2;
 }
+@media screen and (max-width: 991px) {
+  .heading-block {
+    margin-top: -185px;
+  }
+}
 
+.banner-section {
+  padding-top: 80px;
+}
 .banner-section h1 {
   font-size: 7rem;
   font-weight: bold;
@@ -215,17 +235,57 @@ p {
   color: #FFC79A;
   line-height: 1;
 }
+@media screen and (max-width: 1280px) {
+  .banner-section h1 {
+    font-size: 5.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner-section h1 {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .banner-section h1 {
+    font-size: 3rem;
+  }
+}
 .banner-section h2 {
   font-size: 7rem;
   font-weight: 300;
   color: #D6D1C7;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   line-height: 1;
+}
+@media screen and (max-width: 1280px) {
+  .banner-section h2 {
+    font-size: 5.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner-section h2 {
+    font-size: 4rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .banner-section h2 {
+    font-size: 3rem;
+  }
 }
 .banner-section p {
   font-size: 1.5rem;
   font-weight: 300;
   color: #838383;
+}
+@media screen and (max-width: 767px) {
+  .banner-section p {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  .banner-section p {
+    font-size: 1rem;
+  }
 }
 .banner-section p span {
   font-weight: 500;
@@ -238,6 +298,14 @@ p {
   border-radius: 20px;
   opacity: 1;
   text-align: center;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (max-width: 767px) {
+  .banner-section .dashed-box {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
 }
 .banner-section .dashed-box h2 {
   font-size: 50px;
@@ -256,16 +324,64 @@ p {
   margin-bottom: 0.5rem;
   color: #D6D1C7;
 }
+.banner-section .stats-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 520px) {
+  .banner-section .stats-list {
+    justify-content: flex-start;
+  }
+}
+.banner-section .overview-block {
+  justify-content: flex-end;
+}
+@media screen and (max-width: 991px) {
+  .banner-section .overview-block {
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 520px) {
+  .banner-section .overview {
+    flex-flow: wrap;
+  }
+}
 .banner-section .overview li {
   padding: 0 28px;
   border-right: 1px solid rgba(255, 255, 255, 0.38);
 }
+@media screen and (max-width: 676px) {
+  .banner-section .overview li {
+    padding: 0 16px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .banner-section .overview li {
+    width: 50%;
+  }
+}
 .banner-section .overview li:first-child {
   padding-left: 0;
+}
+@media screen and (max-width: 520px) {
+  .banner-section .overview li:first-child {
+    padding: 0 16px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .banner-section .overview li:nth-child(2) {
+    border: 0;
+  }
 }
 .banner-section .overview li:last-child {
   padding-right: 0;
   border: none;
+}
+@media screen and (max-width: 520px) {
+  .banner-section .overview li:last-child {
+    margin-top: 1rem;
+  }
 }
 .banner-section .overview li .num {
   font-size: 52px;
@@ -273,16 +389,34 @@ p {
   line-height: 52px;
   color: #D6D1C7;
 }
+@media screen and (max-width: 676px) {
+  .banner-section .overview li .num {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
 .banner-section .overview li .light {
   color: #838383;
   font-size: 14px;
   text-transform: uppercase;
   margin-left: 15px;
 }
+@media screen and (max-width: 676px) {
+  .banner-section .overview li .light {
+    margin-left: 8px;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+}
 .banner-section .overview li .light span {
   color: #D6D1C7;
   text-transform: initial;
   font-size: 16px;
+}
+@media screen and (max-width: 676px) {
+  .banner-section .overview li .light span {
+    font-size: 12px;
+  }
 }
 .banner-section .overview .big-button.bigButn-block.sectionBtn {
   text-align: right;
@@ -299,6 +433,14 @@ p {
 .banner-section .big-button {
   border-color: #FFC79A;
 }
+@media screen and (max-width: 576px) {
+  .banner-section .big-button {
+    height: 55px;
+    line-height: 56px;
+    padding: 0px 1.5rem;
+    font-size: 1rem;
+  }
+}
 .banner-section .letter-video {
   margin: -160px auto 0;
   text-align: center;
@@ -306,10 +448,21 @@ p {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 767px) {
+  .banner-section .letter-video {
+    margin: -20px auto 0;
+  }
+}
 .banner-section .letter-video video {
   width: 600px;
   height: 600px;
+  max-width: 100%;
   margin: auto;
+}
+@media screen and (max-width: 767px) {
+  .banner-section .letter-video video {
+    height: 400px;
+  }
 }
 .banner-section .mike h5 {
   margin-top: 11px;
@@ -327,6 +480,26 @@ p {
   text-align: right;
 }
 
+@media screen and (max-width: 767px) {
+  .intro-section {
+    padding-top: 2rem;
+  }
+}
+.intro-section .sec2-detail {
+  padding-top: 70px;
+}
+.intro-section .letter-video video {
+  margin-left: 0;
+  width: 500px;
+  height: 500px;
+}
+@media screen and (max-width: 767px) {
+  .intro-section .letter-video video {
+    margin: auto;
+    width: 100%;
+    height: auto;
+  }
+}
 .intro-section .left-details {
   font-size: 20px;
 }
@@ -334,9 +507,37 @@ p {
   display: block;
   margin-bottom: 28px;
 }
+.intro-section .stats-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 520px) {
+  .intro-section .stats-list {
+    justify-content: flex-start;
+  }
+}
+.intro-section .overview-block {
+  justify-content: flex-end;
+}
+@media screen and (max-width: 991px) {
+  .intro-section .overview-block {
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 520px) {
+  .intro-section .overview {
+    flex-flow: wrap;
+  }
+}
 .intro-section ul li {
   padding: 0 28px;
   border-right: 1px solid rgba(255, 255, 255, 0.38);
+}
+@media screen and (max-width: 676px) {
+  .intro-section ul li {
+    padding: 0 16px;
+  }
 }
 .intro-section ul li:first-child {
   padding-left: 0;
@@ -345,11 +546,22 @@ p {
   padding-right: 0;
   border: none;
 }
+@media screen and (max-width: 520px) {
+  .intro-section ul li:last-child {
+    margin-top: 1rem;
+  }
+}
 .intro-section ul li .num {
   font-size: 52px;
   font-weight: 100;
   line-height: 52px;
   color: #D6D1C7;
+}
+@media screen and (max-width: 676px) {
+  .intro-section ul li .num {
+    font-size: 30px;
+    line-height: 40px;
+  }
 }
 .intro-section ul li .light {
   color: #838383;
@@ -357,10 +569,22 @@ p {
   text-transform: uppercase;
   margin-left: 15px;
 }
+@media screen and (max-width: 676px) {
+  .intro-section ul li .light {
+    margin-left: 8px;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+}
 .intro-section ul li .light span {
   color: #D6D1C7;
   text-transform: initial;
   font-size: 16px;
+}
+@media screen and (max-width: 676px) {
+  .intro-section ul li .light span {
+    font-size: 12px;
+  }
 }
 .intro-section ul .big-button {
   text-align: right;
@@ -457,6 +681,9 @@ p {
   font-size: 12px;
 }
 
+.pricing-section {
+  padding-top: 80px;
+}
 .pricing-section .nav-tabs {
   border: none;
   margin-bottom: 15px;
@@ -588,20 +815,14 @@ h2.heading {
   line-height: 44px;
   font-weight: bold;
 }
+@media screen and (max-width: 991px) {
+  h2.heading {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+}
 h2.heading span {
   display: block;
-}
-
-.sec2-detail {
-  padding-top: 70px;
-}
-.sec2-detail .letter-video {
-  margin: -40px auto 0;
-}
-.sec2-detail .letter-video video {
-  margin-left: 0;
-  width: 500px;
-  height: 500px;
 }
 
 #section6 .bigButn-block.big-button {
@@ -622,7 +843,7 @@ h2.heading span {
 }
 #section6 .heading {
   margin-bottom: 40px;
-  line-height: 56px;
+  line-height: 1.2;
 }
 #section6 .socialMedia li a {
   width: 40px;
@@ -643,32 +864,84 @@ h2.heading span {
   background-size: 350px auto;
   background-position: 100% bottom;
 }
-.coursehighlight-section ul li {
-  padding: 0 28px;
+.coursehighlight-section .stats-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.coursehighlight-section ul li:first-child {
+@media screen and (max-width: 520px) {
+  .coursehighlight-section .stats-list {
+    justify-content: flex-start;
+  }
+}
+.coursehighlight-section .overview-block {
+  justify-content: flex-end;
+}
+@media screen and (max-width: 991px) {
+  .coursehighlight-section .overview-block {
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 520px) {
+  .coursehighlight-section ul.overview {
+    flex-flow: wrap;
+  }
+}
+.coursehighlight-section ul.overview li {
+  padding: 0 28px;
+  border-right: 1px solid rgba(255, 255, 255, 0.38);
+}
+@media screen and (max-width: 676px) {
+  .coursehighlight-section ul.overview li {
+    padding: 0 16px;
+  }
+}
+.coursehighlight-section ul.overview li:first-child {
   padding-left: 0;
 }
-.coursehighlight-section ul li:last-child {
+.coursehighlight-section ul.overview li:last-child {
   padding-right: 0;
   border: none;
 }
-.coursehighlight-section ul li .num {
+@media screen and (max-width: 520px) {
+  .coursehighlight-section ul.overview li:last-child {
+    margin-top: 1rem;
+  }
+}
+.coursehighlight-section ul.overview li .num {
   font-size: 52px;
   font-weight: 100;
   line-height: 52px;
   color: #D6D1C7;
 }
-.coursehighlight-section ul li .light {
+@media screen and (max-width: 676px) {
+  .coursehighlight-section ul.overview li .num {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+.coursehighlight-section ul.overview li .light {
   color: #838383;
   font-size: 14px;
   text-transform: uppercase;
   margin-left: 15px;
 }
-.coursehighlight-section ul li .light span {
+@media screen and (max-width: 676px) {
+  .coursehighlight-section ul.overview li .light {
+    margin-left: 8px;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+}
+.coursehighlight-section ul.overview li .light span {
   color: #D6D1C7;
   text-transform: initial;
   font-size: 16px;
+}
+@media screen and (max-width: 676px) {
+  .coursehighlight-section ul.overview li .light span {
+    font-size: 12px;
+  }
 }
 .coursehighlight-section ul .big-button {
   text-align: right;
@@ -707,10 +980,16 @@ h2.heading span {
   width: 110px;
   text-align: right;
 }
+@media screen and (max-width: 767px) {
+  .coursehighlight-section .course-heighlight-detail .detail-th .th3 {
+    width: 68px;
+  }
+}
 .coursehighlight-section .course-heighlight-detail .accordion-item {
   background: transparent;
   border: 0;
   border-bottom: 1px dashed #838383;
+  border-radius: 0;
 }
 .coursehighlight-section .course-heighlight-detail .accordion-item:nth-child(1) {
   border-top: 1px dashed #838383;
@@ -723,11 +1002,23 @@ h2.heading span {
   font-size: 24px;
   margin-bottom: 0;
 }
+@media screen and (max-width: 767px) {
+  .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header h6 {
+    font-size: 17px;
+  }
+}
 .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header h6 span {
   font-size: 14px;
   line-height: 18px;
   margin-top: 10px;
   color: #838383;
+}
+@media screen and (max-width: 767px) {
+  .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header h6 span {
+    font-size: 12px;
+    line-height: 1.1;
+    margin-top: 5px;
+  }
 }
 .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header .accordion-button {
   display: flex;
@@ -753,6 +1044,17 @@ h2.heading span {
   display: inline-block;
   color: #FFC79A;
 }
+@media screen and (max-width: 767px) {
+  .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header .accordion-button p {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    margin-bottom: auto;
+    margin-top: auto;
+    margin-right: 10px;
+  }
+}
 .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header .accordion-button button {
   width: 105px;
   height: 40px;
@@ -764,11 +1066,19 @@ h2.heading span {
   box-shadow: none;
   outline: none;
 }
+@media screen and (max-width: 767px) {
+  .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header .accordion-button button {
+    font-size: 11px;
+    width: 85px;
+    height: 30px;
+  }
+}
 .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header .accordion-button button:hover {
   border-color: #FFC79A;
 }
 .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header .accordion-button .icon {
   width: 50px;
+  min-width: 50px;
   height: 50px;
   border-radius: 10px;
   text-align: center;
@@ -786,10 +1096,25 @@ h2.heading span {
   justify-content: center;
   flex-direction: column;
 }
+@media screen and (max-width: 767px) {
+  .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header .accordion-button .icon {
+    width: 35px;
+    height: 35px;
+    min-width: 35px;
+    border-radius: 6px;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+}
 .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header .accordion-button .icon strong {
   font-size: 10px;
   display: block;
   font-weight: 300;
+}
+@media screen and (max-width: 767px) {
+  .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header .accordion-button .icon strong {
+    font-size: 8px;
+  }
 }
 .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header .accordion-button .icon img,
 .coursehighlight-section .course-heighlight-detail .accordion-item .accordion-header .accordion-button .icon svg {
@@ -808,6 +1133,11 @@ h2.heading span {
 }
 .coursehighlight-section .course-heighlight-detail .accordion-body .course-video-link {
   margin-left: 45px;
+}
+@media screen and (max-width: 767px) {
+  .coursehighlight-section .course-heighlight-detail .accordion-body .course-video-link {
+    margin-left: 0;
+  }
 }
 .coursehighlight-section .course-heighlight-detail .accordion-body .course-video-link li {
   position: relative;
@@ -894,7 +1224,11 @@ h2.heading span {
   margin-top: 4rem;
   width: -moz-fit-content;
   width: fit-content;
-  animation: marquee-desktop calc(var(--card-speed, 4s) * var(--card-count, 8)) linear infinite;
+  animation: marquee-desktop calc(var(--card-speed, 6s) * var(--card-count, 11)) linear infinite;
+}
+.studentsgb-section .studentsgb-list-wrapper {
+  max-width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 .studentsgb-section .studentsgb-list {
@@ -909,6 +1243,13 @@ h2.heading span {
   height: 348px;
   border-radius: 20px;
   overflow: hidden;
+}
+.studentsgb-section .studentsgb-list .studentsgb-card video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  opacity: 0.8;
 }
 .studentsgb-section .studentsgb-list .studentsgb-card .card-overlay {
   position: absolute;
@@ -948,7 +1289,7 @@ h2.heading span {
   -o-object-fit: fill;
      object-fit: fill;
   filter: grayscale(1);
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 .mid-heading {
@@ -963,6 +1304,11 @@ h2.heading span {
 .contact-section {
   position: relative;
 }
+@media screen and (max-width: 767px) {
+  .contact-section {
+    padding-top: 2rem;
+  }
+}
 .contact-section::before {
   content: " ";
   height: 100%;
@@ -974,6 +1320,11 @@ h2.heading span {
   top: 0;
   bottom: 0;
   z-index: 1;
+}
+@media screen and (max-width: 767px) {
+  .contact-section::before {
+    display: none;
+  }
 }
 .contact-section .contact-left p {
   font-size: 1rem;
@@ -1060,6 +1411,12 @@ h2.heading span {
   background: #343434;
   border-radius: 10px;
 }
+@media screen and (max-width: 767px) {
+  .contact-section .big-button {
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+  }
+}
 .contact-section .big-button span {
   font-size: 14px;
   display: block;
@@ -1071,6 +1428,18 @@ h2.heading span {
   bottom: 10px;
   z-index: 2;
   width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .contact-section .footer-small {
+    position: initial;
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contact-section .footer-small .footer-left {
+    text-align: center;
+    margin-bottom: 1.2rem;
+  }
 }
 .contact-section .footer-small .footer-left p {
   margin-bottom: 0;
@@ -1114,6 +1483,9 @@ h2.heading span {
   font-size: 12px;
 }
 
+.terms-nav {
+  padding-top: 80px;
+}
 .terms-nav ul {
   text-align: center;
   list-style-type: none;
@@ -1238,7 +1610,7 @@ footer .footer-left img {
 
 .planheader-section {
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 80px 0 1.5rem 0;
 }
 .planheader-section p {
   font-size: 18px;

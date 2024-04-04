@@ -8,6 +8,7 @@ function scrollToNextSection() {
         nextSection.scrollIntoView({ behavior: 'smooth' });
     }
 }
+
 new WOW().init();
 
 $(".custom-select .dropdown-menu li").click(function () {
@@ -15,15 +16,39 @@ $(".custom-select .dropdown-menu li").click(function () {
     $(this).parents(".dropdown").find('button').val($(this).data('value'));
 });
 
-$(function () {
-    $.scrollify({
-        section: ".panels",
-        scrollbars: false,
-        scrollSpeed: 500,
+var Touch = 'ontouchstart' in window || navigator.msMaxTouchPoints;
+if (typeof Touch === 'undefined') {
+    luxy.init({
+        wrapper: '#main',
+        targets: '.luxy-el',
+        wrapperSpeed: 0.08
     });
 
-    $(".pagination a").on("click", function () {
-        $.scrollify.move($(this).attr("href"));
-    });
+    jumpToTop = (obj) => {
+        scrollTo({
+            top: document.querySelector(obj).offsetTop,
+            left: 0,
+            behavior: 'smooth'
+        });
+        window.location = `${obj}`;
+    };
 
-});
+    jumpToContact = (obj) => {
+        scrollTo({
+            top: document.querySelector(obj).offsetTop,
+            left: 0,
+            behavior: 'smooth'
+        });
+        window.location = `${obj}`;
+    };
+
+    jumpToPortfolio = (obj) => {
+        scrollTo({
+            top: document.querySelector(obj).offsetTop,
+            left: 0,
+            behavior: 'smooth'
+        });
+        window.location = `${obj}`;
+    };
+
+}
