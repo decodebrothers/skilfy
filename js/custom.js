@@ -52,3 +52,16 @@ if (typeof Touch === 'undefined') {
     };
 
 }
+
+$(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+     //>=, not <=
+    if (scroll >= 900) {
+        //clearHeader, not clearheader - caps H
+        $("body").addClass("fixed-action");
+    }
+    else {
+        $("body").removeClass("fixed-action");
+    }
+}); //missing );

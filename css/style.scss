@@ -177,6 +177,10 @@ p {
 	background: #010101;
 	width: 100%;
 
+	@media screen and (max-width:767px) {
+		padding: 10px 0;
+	}
+
 	.dropdown {
 		.btn {
 			display: flex;
@@ -243,10 +247,116 @@ p {
 					line-height: 40px;
 					border-radius: 5px;
 					font-size: 14px;
+
 					@media screen and (max-width:640px) {
 						height: 36px;
 						line-height: 36px;
 					}
+				}
+			}
+		}
+	}
+}
+
+.header-action {
+	display: none;
+	position: fixed;
+	z-index: 9;
+	width: 100%;
+	.fixed-action & {
+		display: block;
+	}
+	@media screen and (max-width:767px) {
+		background-color: $dark-color;
+	}
+	ul.overview {
+		display: flex;
+		justify-content: flex-end;
+		background: #010101;
+		margin: 0;
+		padding: 8px 0;
+
+		li {
+			padding: 0 28px;
+			border-right: 1px solid rgba(255, 255, 255, 0.38);
+
+			@media screen and (max-width:676px) {
+				padding: 0 6px;
+			}
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			&:last-child {
+				padding-right: 0;
+				border: none;
+			}
+
+			.num {
+				font-size: 42px;
+				font-weight: 100;
+				line-height: 1.1;
+				color: $text-color-primary;
+
+				@media screen and (max-width:767px) {
+					font-size: 20px;
+					line-height: 1.2;
+				}
+			}
+
+			.light {
+				color: $text-color-light;
+				font-size: 14px;
+				text-transform: uppercase;
+				margin-left: 15px;
+
+				@media screen and (max-width:676px) {
+					margin-left: 8px;
+					font-size: 11px;
+					line-height: 1.3;
+				}
+
+				span {
+					color: $text-color-primary;
+					text-transform: initial;
+					font-size: 16px;
+					line-height: 1.1;
+
+					@media screen and (max-width:676px) {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+
+		.big-button {
+			text-align: right;
+			width: 118px;
+			height: 58px;
+			padding: 15px;
+			font-size: 16px;
+			min-width: 118px;
+			line-height: 1.1;
+			border: 1px solid $primary-color;
+			background: #343434;
+			border-radius: 10px;
+
+			@media screen and (max-width:767px) {
+				width: 85px;
+				height: 50px;
+				padding: 10px;
+				font-size: 11px;
+				min-width: 85px;
+			}
+
+			span {
+				font-size: 14px;
+				display: block;
+				margin-bottom: 2px;
+				font-weight: 300;
+				@media screen and (max-width:767px) {
+					font-size: 12px;
 				}
 			}
 		}
@@ -556,7 +666,7 @@ p {
 	}
 
 	.sec2-detail {
-		padding-top: 70px;
+		padding-top: 30px;
 	}
 
 	.letter-video video {
@@ -577,6 +687,7 @@ p {
 		span {
 			display: block;
 			margin-bottom: 28px;
+			line-height: 1.6;
 		}
 	}
 
@@ -584,6 +695,10 @@ p {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		.fixed-action & {
+			display: none;
+		}
 
 		@media screen and (max-width:520px) {
 			justify-content: flex-start;
@@ -604,10 +719,38 @@ p {
 		}
 	}
 
-	ul {
+	.details-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 2rem 1rem;
+		list-style-type: none;
+		padding-left: 0;
+		font-size: 1rem;
+		color: #D6D1C7;
+		margin-top: 3.8rem;
+		li {
+			display: flex;
+			align-items: center;
+			.left-icon {
+				background: #343434;
+				border: 1px solid $primary-color;
+				border-radius: 10px;
+				width: 40px;
+				height: 40px;
+				min-width: 40px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-right: 1.2rem;
+			}
+		}
+	}
+
+	ul.overview {
 		@media screen and (max-width:676px) {
 			justify-content: space-between !important;
 		}
+
 		li {
 			padding: 0 28px;
 			border-right: 1px solid rgba(255, 255, 255, 0.38);
@@ -746,6 +889,9 @@ p {
 			padding: 10px 6px;
 			cursor: pointer;
 			color: $primary-color;
+			@media screen and (max-width:640px) {
+				font-size: 13px;
+			}
 		}
 
 		.nav-item {
@@ -804,7 +950,11 @@ p {
 	}
 
 	.action-row {
-
+		.action-col-left {
+			.nav-tabs {
+				display: flex;
+			}
+		}
 		.action-row-right {
 			text-align: right;
 		}
@@ -812,9 +962,11 @@ p {
 
 	.pricing-header {
 		padding-top: 2rem;
+
 		@media screen and (max-width:767px) {
 			padding-top: 1rem;
 		}
+
 		h1 {
 			font-size: 3.2rem;
 			line-height: 1.1;
@@ -835,8 +987,10 @@ p {
 
 	.pricing-header-right {
 		text-align: right;
+
 		@media screen and (max-width:767px) {
 			text-align: left;
+
 			br {
 				display: none;
 			}
@@ -851,8 +1005,20 @@ p {
 		margin-bottom: 40px;
 		transition: all ease-in-out 0.3s;
 
+		@media screen and (max-width:1024px) {
+			margin-bottom: 30px;			
+		}
+
+		@media screen and (max-width:767px) {
+			margin-bottom: 20px;			
+		}
+
 		&:hover {
 			border-color: $primary-color;
+		}
+
+		video::-webkit-media-controls-start-playback-button {
+			display: none;
 		}
 
 		.overview {
@@ -895,6 +1061,7 @@ p {
 					span {
 						font-size: 13px;
 						color: $text-color-primary;
+
 						@media screen and (max-width:640px) {
 							font-size: 12px;
 						}
@@ -909,7 +1076,6 @@ p {
 			video {
 				width: 100%;
 				height: 310px;
-				margin-left: -30px;
 			}
 		}
 
@@ -1067,6 +1233,7 @@ h2.heading {
 			@media screen and (max-width:676px) {
 				justify-content: space-between;
 			}
+
 			@media screen and (max-width:520px) {
 				flex-flow: wrap;
 			}
@@ -1170,6 +1337,7 @@ h2.heading {
 			.th3 {
 				width: 110px;
 				text-align: right;
+
 				@media screen and (max-width:767px) {
 					width: 68px;
 				}
@@ -1204,6 +1372,7 @@ h2.heading {
 						line-height: 18px;
 						margin-top: 10px;
 						color: $text-color-light;
+
 						@media screen and (max-width:767px) {
 							font-size: 12px;
 							line-height: 1.1;
@@ -1236,6 +1405,7 @@ h2.heading {
 						margin-right: 25px;
 						display: inline-block;
 						color: $primary-color;
+
 						@media screen and (max-width:767px) {
 							width: 30px;
 							height: 30px;
@@ -1261,7 +1431,7 @@ h2.heading {
 						@media screen and (max-width:767px) {
 							font-size: 11px;
 							width: 85px;
-    						height: 30px;
+							height: 30px;
 						}
 
 						&:hover {
@@ -1302,6 +1472,7 @@ h2.heading {
 							font-size: 10px;
 							display: block;
 							font-weight: 300;
+
 							@media screen and (max-width:767px) {
 								font-size: 8px;
 							}
@@ -1435,6 +1606,7 @@ h2.heading {
 			font-size: 3.5rem;
 			line-height: 1.2;
 			padding-top: 0;
+
 			@media screen and (max-width:991px) {
 				font-size: 2.5rem;
 				line-height: 1.2;
@@ -1445,11 +1617,13 @@ h2.heading {
 	.mid-heading {
 		text-align: right;
 		font-weight: 300;
+
 		@media screen and (max-width:991px) {
 			line-height: 1.2;
 			font-size: 2rem;
 			text-align: left;
 		}
+
 		span {
 			color: $primary-color;
 			font-weight: 600;
@@ -1548,7 +1722,8 @@ h2.heading {
 
 .contact-section {
 	position: relative;
-
+	background: #343434;
+	
 	@media screen and (max-width:767px) {
 		padding-top: 2rem;
 	}
@@ -1557,7 +1732,7 @@ h2.heading {
 		content: " ";
 		height: 100%;
 		width: 50%;
-		background: #343434;
+		border-left: 1px solid rgba($border-color, 0.5);
 		display: block;
 		position: absolute;
 		right: 0;
@@ -1595,6 +1770,7 @@ h2.heading {
 			border: 1px solid $border-color;
 			margin-bottom: 30px;
 			padding: 0 20px;
+			color: $white-color;
 
 			&::placeholder {
 				color: $text-color-primary;
@@ -1638,7 +1814,7 @@ h2.heading {
 	}
 
 	.selectBox {
-		select.form-control {
+		.form-control {
 			-moz-appearance: none;
 			-ms-appearance: none;
 			-o-appearance: none;
@@ -1650,6 +1826,12 @@ h2.heading {
 			background: url('../images/down-icon.svg') no-repeat;
 			background-position: 95% center;
 			color: $text-color-primary;
+			text-align: left;
+		}
+
+		.dropdown-menu {
+			width: 100%;
+			border: 1px solid $primary-color;
 		}
 	}
 
@@ -1808,7 +1990,7 @@ h2.heading {
 		display: flex;
 		align-items: center;
 		margin-bottom: 4rem;
-		
+
 		@media screen and (max-width:767px) {
 			flex-direction: column;
 			padding: 2rem 0 0 0;
@@ -1847,6 +2029,7 @@ h2.heading {
 				margin-top: 2rem;
 				font-weight: 300;
 				color: $text-color-primary;
+
 				@media screen and (max-width:767px) {
 					margin-top: 1rem;
 					font-size: 15px;
@@ -1855,6 +2038,7 @@ h2.heading {
 
 			.btn {
 				margin-top: 2rem;
+
 				@media screen and (max-width:767px) {
 					margin-top: 1rem;
 				}
@@ -1882,6 +2066,7 @@ h2.heading {
 			animation-iteration-count: infinite;
 			width: 80%;
 			z-index: 2;
+
 			@media screen and (max-width:767px) {
 				position: initial;
 				height: 250px;
@@ -1903,6 +2088,7 @@ h2.heading {
 			font-size: 2.5rem;
 			font-weight: 400;
 			margin-bottom: 1rem;
+
 			@media screen and (max-width:767px) {
 				font-size: 1.8rem;
 			}
@@ -1910,6 +2096,7 @@ h2.heading {
 
 		p {
 			font-size: 1.1rem;
+
 			@media screen and (max-width:767px) {
 				font-size: 0.95rem;
 			}
@@ -1924,6 +2111,7 @@ footer {
 			justify-content: center !important;
 			margin-top: 1rem;
 		}
+
 		li {
 			padding: 0 6px;
 
@@ -1957,6 +2145,7 @@ footer {
 		@media screen and (max-width:767px) {
 			text-align: center;
 		}
+
 		p {
 			margin-bottom: 0;
 			color: $text-color-primary;
@@ -2877,6 +3066,121 @@ body {
 	}
 }
 
+.learn-section {
+	.learnsection-row {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 1.5rem;
+		@media screen and (max-width:991px) {
+			flex-direction: column;
+		}
+		.learnsection-left {
+			ul {
+				list-style-type: none;
+				padding-left: 0;
+				li {
+					display: flex;
+					align-items: center;
+					font-size: 21px;
+					padding: 10px 0;
+					.left-icon {
+						border: 1px solid #707070;
+						border-radius: 8px;
+						width: 36px;
+						min-width: 36px;
+						height: 36px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						color: $primary-color;
+						margin-right: 20px;
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+		.learnsection-right {
+			.learn-card {
+				border: 1px solid $primary-color;
+				border-radius: 10px;
+				padding: 1.8rem;
+				background: #343434;
+				width: 100%;
+				max-width: 384px;
+				min-width: 384px;
+				@media screen and (max-width:991px) {
+					min-width: 100%;
+					max-width: 100%;
+				}
+				.videocard-img {
+					width: 100%;
+					border-radius: 10px;
+					overflow: hidden;
+					height: 180px;
+					margin-bottom: 1.5rem;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					@media screen and (max-width:991px) {
+						height: auto;
+					}
+					img {
+						width: 100%;
+						height: 100%;
+					}
+					.play-btn {
+						width: 35px;
+						height: 35px;
+						border-radius: 35px;
+						background: $primary-color;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						position: absolute;
+						z-index: 2;
+						&:hover {
+							&::after {
+								content: '';
+								position: absolute;
+								width: 100%;
+								height: 100%;
+								background-color: $white-color;
+								border-radius: 50%;
+								top: 0;
+								left: 0;
+								animation: bubble 2s ease-out infinite;
+								z-index: -1;
+							}
+						}
+					}
+				}
+				ul {
+					padding-left: 0;
+					margin-bottom: 1rem;
+					li {
+						display: flex;
+						align-items: center;
+						font-weight: 300;
+						font-size: 20px;
+						color: #D6D1C7;
+						padding: 8px 0;
+						.icons {
+							background: $dark-color;
+							border-radius: 10px;
+							width: 40px;
+							height: 40px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							margin-right: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @media only screen and (max-width: 1200px) {
 	.container {
 		max-width: 96%;
@@ -2936,6 +3240,17 @@ body {
 		background-position: 0 -100px;
 	}
 }
+
+@keyframes bubble {
+	0% {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+	100% {
+	  transform: scale(1.8);
+	  opacity: 0;
+	}
+  }
 
 ::-webkit-scrollbar {
 	width: 6px;
